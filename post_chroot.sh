@@ -67,11 +67,11 @@ esac
 
 printf "preparing to do big emerge\n"
 
-printf "America/New_York\n" > /etc/timezone
+printf "Europe/Riga\n" > /etc/timezone
 emerge --config --quiet sys-libs/timezone-data
 printf "timezone data emerged\n"
 #en_US.UTF-8 UTF-8
-printf "en_US.UTF-8 UTF-8\n" >> /etc/locale.gen
+printf "lv_LV.UTF-8 UTF-8\n" >> /etc/locale.gen
 locale-gen
 printf "script complete\n"
 eselect locale set 4
