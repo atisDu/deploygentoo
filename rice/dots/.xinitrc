@@ -1,13 +1,16 @@
-# Uncomment to load xresources file
-
 slstatus &
-#dwmstatus 2>&1 >/dev/null &
-
-# Uncomment and edit to set the wallpaper.
-# feh --bg-fill ~/Pictures/Mountains.jpg
-
-# Hides the mouse cursor after 3 seconds of inactivity
-unclutter -idle 3 &
-xrdb ~/.Xresources &
-# Saving a dwm log
-exec dwm > ~/.dwm.log
+exec picom &
+connman-gtk & 
+blueman-applet &
+redshift-gtk -l 57.154541:24.853809 &
+xautolock -time 10 -locker slock &
+setxkbmap lv apostrophe
+# Desktop background (WM Agnostic)
+while feh --bg-fill --randomize --no-fehbg $HOME/Foni/*
+do
+        sleep 900 # 15min
+	        done &
+xrdb -merge ~/.Xresources
+urxvtd --quiet --opendisplay --fork
+/usr/libexec/polkit-gnome-authentication-agent-1 &
+exec dwm
