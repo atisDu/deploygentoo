@@ -74,7 +74,7 @@ printf "timezone data emerged\n"
 printf "lv_LV.UTF-8 UTF-8\n" >> /etc/locale.gen
 locale-gen
 printf "script complete\n"
-eselect locale set 4
+eselect locale set 7
 env-update && source /etc/profile
 
 #Installs the kernel
